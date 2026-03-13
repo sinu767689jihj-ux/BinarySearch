@@ -1,0 +1,22 @@
+class CharacterBinarySearch{
+    public static int search(String str, int target) {
+        int r=str.length();
+        int l=0,mid=0;
+        while(l<=r){
+            mid=l+(r-l)/2;
+            if(str.charAt(mid)==target){
+                return mid;
+            }else if(str.charAt(mid)>target){
+                r=mid-1;
+            }else{
+                l=mid+1;
+            }
+        }
+        return l;
+    }
+    public static void main(String[] args){
+        String str="srinu";
+        char target='i';
+        System.out.println(search(str,target));
+    }
+}
